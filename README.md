@@ -1,4 +1,4 @@
-## dropbox_hook.py: Test your Dropbox webhook endpoints
+## dropbox_hook.py
 
     Usage: dropbox_hook.py [OPTIONS] COMMAND [ARGS]...
     
