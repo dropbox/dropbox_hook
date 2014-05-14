@@ -9,7 +9,7 @@ import requests
 
 @click.group()
 def cli():
-    '''This tool makes it easier to test Dropbox webhooks, particularly on localhost. Usage:
+    '''This tool makes it easier to test Dropbox webhooks, particularly on localhost. It generates fake requests, mimicking what Dropbox itself sends. Usage:
 
     \b
         dropbox_hook.py verify URL

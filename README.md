@@ -11,7 +11,8 @@ This tool requires the [`requests`](http://docs.python-requests.org/en/latest/) 
     Usage: dropbox_hook.py [OPTIONS] COMMAND [ARGS]...
     
       This tool makes it easier to test Dropbox webhooks, particularly on
-      localhost. Usage:
+      localhost. It generates fake requests, mimicking what Dropbox itself
+      sends. Usage:
     
           dropbox_hook.py verify URL
           dropbox_hook.py notify URL -s APP_SECRET -u USER_ID
