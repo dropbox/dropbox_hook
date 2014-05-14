@@ -2,7 +2,7 @@
 
 ## Setup
 
-This tool requires the `requests` and `click` libraries. You can install both via pip:
+This tool requires the [`requests`](http://docs.python-requests.org/en/latest/) and [`click`](http://click.pocoo.org/) libraries. You can install both via pip:
 
     pip install -r requirements.txt
 
