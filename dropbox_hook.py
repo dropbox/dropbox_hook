@@ -30,22 +30,19 @@ def verify(url, challenge):
     dropbox_hook.py verify http://www.example.com
     '''
 
-    if url is None:
-        print 'Missing URL. See "dropbox_hook.py challenge --help" for usage.'
-        sys.exit(1)
     response = requests.get(url, params={ 'challenge': challenge })
     if response.status_code == 200:
         if response.text == challenge:
-            print 'Challenge passed!'
+            print 'Verification passed!'
         else:
             text = response.text
             if len(text) > 30:
                 text = '(truncated) "%s..."' % text[:30]
             else:
                 text = '"%s"' % text
-            print 'Invalid challenge response. Expected "%s", but server responded with %s' % (challenge, text)
+            print 'Invalid verification response. Expected "%s", but server responded with %s' % (challenge, text)
     else:
-        print 'Invalid challenge response. Server responded with status code %d.' % response.status_code
+        print 'Invalid verification response. Server responded with status code %d.' % response.status_code
 
 @cli.command()
 @click.argument('url', metavar='URL', required=True)
@@ -56,10 +53,6 @@ def notify(url, secret, user):
 
     dropbox_hook.py notify http://www.example.com --secret ABC123 --user 12345
     '''
-
-    if url is None:
-        print 'Missing URL. See "dropbox_hook.py verify --help" for usage.'
-        sys.exit(1)
 
     body = json.dumps({ 'delta': { 'users': user } })
 
