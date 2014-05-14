@@ -1,4 +1,12 @@
-## dropbox_hook.py
+# dropbox_hook.py
+
+## Setup
+
+This tool requires the `requests` and `click` libraries. You can install both via pip:
+
+    pip install -r requirements.txt
+
+## Usage
 
     Usage: dropbox_hook.py [OPTIONS] COMMAND [ARGS]...
     
