@@ -60,7 +60,8 @@ def notify(url, secret, user):
         url,
         data=body,
         headers={
-            'X-Dropbox-Signature': hmac.new(secret.encode(), body.encode(), sha256).hexdigest()
+            'X-Dropbox-Signature': hmac.new(secret.encode(), body.encode(), sha256).hexdigest(),
+            'Content-type' : 'application/json'
         })
     if response.status_code == 200:
         print('Webhook invoked successfully.')
