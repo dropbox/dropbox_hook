@@ -47,7 +47,7 @@ def verify(url, challenge):
 @cli.command()
 @click.argument('url', metavar='URL', required=True)
 @click.option('--secret', '-s', help='Your app secret', metavar='APP_SECRET', required=True)
-@click.option('--account', '-a', help='The account IDs to send to the webhook URI (may be specified multiple times).', multiple=True, metavar='USER_ID', required=True, type=str)
+@click.option('--account', '-a', help='The account IDs to send to the webhook URI (may be specified multiple times).', multiple=True, metavar='ACCOUNT_ID', required=True, type=str)
 def notify(url, secret, account):
     '''Send a notification request. Example usage:
 
