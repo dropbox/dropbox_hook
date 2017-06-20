@@ -47,14 +47,14 @@ def verify(url, challenge):
 @cli.command()
 @click.argument('url', metavar='URL', required=True)
 @click.option('--secret', '-s', help='Your app secret', metavar='APP_SECRET', required=True)
-@click.option('--user', '-u', help='The user IDs to send to the webhook URI (may be specified multiple times).', multiple=True, metavar='USER_ID', required=True, type=int)
-def notify(url, secret, user):
+@click.option('--account', '-a', help='The account IDs to send to the webhook URI (may be specified multiple times).', multiple=True, metavar='ACCOUNT_ID', required=True, type=str)
+def notify(url, secret, account):
     '''Send a notification request. Example usage:
 
-    dropbox_hook.py notify http://www.example.com --secret ABC123 --user 12345
+    dropbox_hook.py notify http://www.example.com --secret ABC123 --account 12345
     '''
 
-    body = json.dumps({ 'delta': { 'users': user } })
+    body = json.dumps({ 'list_folder': { 'accounts': account } })
 
     response = requests.post(
         url,

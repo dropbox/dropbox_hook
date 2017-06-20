@@ -15,7 +15,7 @@ This tool requires the [`requests`](http://docs.python-requests.org/en/latest/) 
       sends. Usage:
     
           dropbox_hook.py verify URL
-          dropbox_hook.py notify URL -s APP_SECRET -u USER_ID
+          dropbox_hook.py notify URL -s APP_SECRET -a ACCOUNT_ID
     
       For detailed help, try this:
     
